@@ -3,15 +3,24 @@ package com.company;
 import java.util.ArrayList;
 
 public class Order {
-    private ArrayList<FoodAndDrinks> orders;
+    private ArrayList<FoodAndDrinks> listOfFoods;
     private double orderTotal;
 
-    public ArrayList<FoodAndDrinks> getOrders() {
-        return orders;
+    public Order(ArrayList<FoodAndDrinks> listOfFoods, double orderTotal){
+        this.listOfFoods = listOfFoods;
+        this.orderTotal = orderTotal;
+    }
+    public Order(){
+        this.listOfFoods = null;
+        this.orderTotal = 0;
     }
 
-    public void setOrders(ArrayList<FoodAndDrinks> orders) {
-        this.orders = orders;
+    public ArrayList<FoodAndDrinks> getListOfFoods() {
+        return listOfFoods;
+    }
+
+    public void setListOfFoods(ArrayList<FoodAndDrinks> listOfFoods) {
+        this.listOfFoods = listOfFoods;
     }
 
     public double getOrderTotal() {

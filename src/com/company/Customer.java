@@ -1,11 +1,17 @@
 package com.company;
 
 import java.util.LinkedList;
-
 public class Customer {
+
     private String givenName;
-    private LinkedList<FoodAndDrinks> order;
+    private Order order = new Order();
     private int orderNumber;
+
+    public Customer(String givenName, Order order, int orderNumber){
+        this.givenName = givenName;
+        this.order = order;
+        this.orderNumber = orderNumber;
+    }
 
     public String getGivenName() {
         return givenName;
@@ -15,12 +21,12 @@ public class Customer {
         this.givenName = givenName;
     }
 
-    public LinkedList<FoodAndDrinks> getOrder() {
+    public Order getOrder() {
         return order;
     }
 
-    public void addToOrder(FoodAndDrinks item) {
-        this.order.add(item);
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public int getOrderNumber() {
@@ -30,4 +36,5 @@ public class Customer {
     public void setOrderNumber(int orderNumber) {
         this.orderNumber = orderNumber;
     }
+
 }

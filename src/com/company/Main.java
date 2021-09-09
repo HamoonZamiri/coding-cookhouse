@@ -6,4 +6,11 @@ public class Main {
 	// write your code here
 
     }
+
+    public void customerMenu (){
+
+    }
+    public void addToOrder(Customer c){
+
+    }
 }
