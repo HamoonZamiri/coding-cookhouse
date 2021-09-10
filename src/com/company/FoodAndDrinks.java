@@ -9,6 +9,14 @@ public class FoodAndDrinks {
     private String typeOfMeal;
     private boolean isVegetarian;
 
+    public FoodAndDrinks(double price, String name, String typeOfMeal, boolean isVegetarian){
+        this.name = name;
+        this.price = price;
+        this.typeOfMeal = typeOfMeal;
+        this.isVegetarian = isVegetarian;
+    }
+
+
     public double getPrice() {
         return price;
     }
