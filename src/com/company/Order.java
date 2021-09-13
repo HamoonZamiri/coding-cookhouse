@@ -8,7 +8,6 @@ public class Order {
 
     public Order(ArrayList<FoodAndDrinks> listOfFoods, double orderTotal){
         this.listOfFoods = listOfFoods;
-        this.orderTotal = orderTotal;
     }
     public Order(){
         this.listOfFoods = null;
@@ -21,14 +20,6 @@ public class Order {
 
     public void setListOfFoods(ArrayList<FoodAndDrinks> listOfFoods) {
         this.listOfFoods = listOfFoods;
-    }
-
-    public double getOrderTotal() {
-        return orderTotal;
-    }
-
-    public void setOrderTotal(double orderTotal) {
-        this.orderTotal = orderTotal;
     }
 
     public double getTotal(){
