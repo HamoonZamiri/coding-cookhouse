@@ -1,7 +1,10 @@
 package com.company;
 import java.util.*;
+import java.io.File;
 
 public class Main {
+
+    ArrayList<FoodAndDrinks> currentMenu = initializeMenu();
 
     public static void main(String[] args) {
 	// write your code here
@@ -25,9 +28,24 @@ public class Main {
     }
     System.out.println("Cooking CodeHouse Software Terminated!");
     }
+    public static ArrayList<FoodAndDrinks> initializeMenu() {
+        File myFile = new File("menu.txt");
+        Scanner fileReader = new Scanner(myFile);
+        String [] currentMenuItem;
 
+        int counter = 0;
 
+        while(fileReader.hasNextLine()){
+            String data = fileReader.nextLine();
+            currentMenuItem = data.split(",");
+            FoodAndDrinks tempFood = new FoodAndDrinks(Double.parseDouble(currentMenuItem[0]),currentMenuItem[1],
+                    currentMenuItem[2], Boolean.parseBoolean(currentMenuItem[3]));
 
+            counter++;
+
+        }
+        return null;
+    }
     public static void printCustomerMenu (){
         System.out.println("1: Add item to total");
         System.out.println("2: Remove item from order");
