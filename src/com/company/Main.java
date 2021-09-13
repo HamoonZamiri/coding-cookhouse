@@ -7,13 +7,20 @@ public class Main {
 	// write your code here
     int userAdminChoice = 0;
 
-    System.out.println("1: Manager use\n2: Take an order\n-1: Exit");
+    System.out.println("1: Manager use | 2: Take an order | -1: Exit");
     Scanner sc = new Scanner(System.in);
     userAdminChoice = sc.nextInt();
 
     while (userAdminChoice != -1){
         if (userAdminChoice == 1) {
             printAdminMenu();
+        }
+        else if(userAdminChoice == 2){
+            printCustomerMenu();
+        }
+        else {
+            System.out.println("Invalid Selection!");
+            System.out.println("1: Manager use\n2: Take an order\n-1: Exit");
         }
     }
     System.out.println("Cooking CodeHouse Software Terminated!");

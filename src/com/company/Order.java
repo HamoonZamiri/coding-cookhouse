@@ -30,4 +30,12 @@ public class Order {
     public void setOrderTotal(double orderTotal) {
         this.orderTotal = orderTotal;
     }
+
+    public double getTotal(){
+        double total = 0;
+        for (int i = 0; i < listOfFoods.size(); i++){
+            total += listOfFoods.get(i).getPrice();
+        }
+        return total;
+    }
 }
