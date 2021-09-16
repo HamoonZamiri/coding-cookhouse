@@ -29,4 +29,7 @@ public class Order {
         }
         return total;
     }
+    public void addItemToMenu(ArrayList<FoodAndDrinks>currentMenu, FoodAndDrinks newFood){
+        currentMenu.add(newFood);
+    }
 }

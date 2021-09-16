@@ -7,7 +7,7 @@ public class Customer {
     private Order order = new Order();
     private int orderNumber;
 
-    public Customer(String givenName, Order order, int orderNumber){
+    public Customer(String givenName, Order order){
         this.givenName = givenName;
         this.order = order;
         this.orderNumber = orderNumber;
@@ -27,14 +27,6 @@ public class Customer {
 
     public void setOrder(Order order) {
         this.order = order;
-    }
-
-    public int getOrderNumber() {
-        return orderNumber;
-    }
-
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
     }
 
 }

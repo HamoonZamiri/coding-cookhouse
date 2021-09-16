@@ -19,7 +19,7 @@ public class Main {
             printAdminMenu();
         }
         else if(userAdminChoice == 2){
-            printCustomerMenu();
+            customerChoices();
         }
         else {
             System.out.println("Invalid Selection!");
@@ -32,6 +32,7 @@ public class Main {
         File myFile = new File("menu.txt");
         Scanner fileReader = new Scanner(myFile);
         String [] currentMenuItem;
+        ArrayList<FoodAndDrinks> returnMe = null;
 
         int counter = 0;
 
@@ -41,17 +42,47 @@ public class Main {
             FoodAndDrinks tempFood = new FoodAndDrinks(Double.parseDouble(currentMenuItem[0]),currentMenuItem[1],
                     currentMenuItem[2], Boolean.parseBoolean(currentMenuItem[3]));
 
+            returnMe.add(counter, tempFood);
             counter++;
 
         }
-        return null;
+        return returnMe;
     }
-    public static void printCustomerMenu (){
-        System.out.println("1: Add item to total");
+    public static void customerChoices (){
+        int choice = 0;
+        final int EXIT = 6;
+        final int ADD_ITEM = 1;
+        final int REMOVE_ITEM = 2;
+        final int CHECK_TOTAL = 3;
+        final int PAY = 4;
+        final int DISPLAY_MENU = 5;
+
+        Scanner scNums = new Scanner(System.in);
+        Scanner scStr = new Scanner(System.in);
+        System.out.println("Customers name: ");
+        String custName = scStr.nextLine();
+
+        ArrayList<FoodAndDrinks> orderList = null; //Order for the current customer
+        Order customersOrder = new Order(orderList, 0);
+
+        Customer currentCust = new Customer(custName, customersOrder); //initialize instance of the current customer
+
+        //displaying menu options for customer
+        System.out.println("1: Add item to order");
         System.out.println("2: Remove item from order");
         System.out.println("3: Check Total");
         System.out.println("4: Pay for Order");
-        System.out.println("5: Cancel Order and Exit");
+        System.out.println("5: Display Menu Options");
+        System.out.println("6: Cancel Order and Exit");
+
+        choice = scNums.nextInt();
+        while (choice != EXIT){
+            if (choice == 1){
+                System.out.println("Enter the name of the menu item: ");
+                String menuItemChosen = scStr.nextLine().toLowerCase();
+            }
+
+        }
 
     }
     public static void printAdminMenu (){

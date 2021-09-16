@@ -49,5 +49,14 @@ public class FoodAndDrinks {
         isVegetarian = vegetarian;
     }
 
+    public FoodAndDrinks findFoodByName(ArrayList<FoodAndDrinks> entireMenu, String name){
+        for (int i = 0; i < entireMenu.size(); i++){
+            if (entireMenu.get(i).name.equals(name)){
+                return entireMenu.get(i);
+            }
+        }
+        return null;
+    }
+
 
 }
