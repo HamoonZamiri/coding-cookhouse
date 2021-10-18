@@ -14,6 +14,14 @@ public class Order {
         this.orderTotal = 0;
     }
 
+    public double getOrderTotal() {
+        return orderTotal;
+    }
+
+    public void setOrderTotal(double orderTotal) {
+        this.orderTotal = orderTotal;
+    }
+
     public ArrayList<FoodAndDrinks> getListOfFoods() {
         return listOfFoods;
     }
